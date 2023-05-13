@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 list_of_dir=$(ls -d */)
 
 cwd=$(pwd)
@@ -30,3 +30,18 @@ done
 echo "Listing all builds : -->"
 
 ls "$cwd/builds"
+
+GITHUB_USER=manishsencha
+GITHUB_TOKEN=$API_TOKEN_GITHUB
+GITHUB_REPOSITORY=spring-gateway-microservice-starter-builds
+
+echo $GITHUB_TOKEN
+
+git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPOSITORY}
+
+cp "$cwd"/builds/* "$cwd"/"$GITHUB_REPOSITORY"
+
+cd "$cwd"/"$GITHUB_REPOSITORY"
+git add .
+
+
