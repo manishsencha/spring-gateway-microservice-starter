@@ -6,16 +6,19 @@ echo "Current Working Directory : --> $cwd"
 
 echo  "List of Directories : --> $list_of_dir"
 
+echo "Creating build directory : --> "
+
+mkdir builds
+
 for dir in $list_of_dir ; do
     echo "Changing directory : --> $dir"
     cd "$cwd"/"$dir"
     echo "Current Directory : --> $(pwd)"
     echo "Building jar : --> $dir"
-
     mvn clean install
     if [ $? -eq 0 ]; then
       echo "Build Success : --> $dir"
-      mv target/*.jar ../*.jar
+      mv target/*.jar ../builds/*.jar
       echo "Moving Build : --> $dir"
     else
       echo "Build Failed : --> $dir"
