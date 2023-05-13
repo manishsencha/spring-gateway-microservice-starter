@@ -39,4 +39,5 @@ jobs:
           destination-username: 'manishsencha'
           destination-repository: 'spring-gateway-microservice-starter-builds'
           destination-directory: '.'
+          destination-branch : 'main'
           commit-email: 'manishsencha2001@gmail.com'
