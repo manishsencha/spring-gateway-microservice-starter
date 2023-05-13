@@ -39,13 +39,17 @@ echo "Cloning repo : -->"
 git clone "https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_REPOSITORY" "$cwd/dest-repo"
 
 echo "Copying required files : -->"
-cp "$cwd/builds/*" "$cwd/dest-repo"
+cp "$cwd/builds/*.jar" "$cwd/dest-repo/"
 
 echo "Changing Directory : -->"
 cd "$cwd/dest-repo"
 
 echo "Performing Git Actions : -->"
+git config --global user.email "manishsencha2001@gmail.com"
+git config --global user.name "Manish Sencha"
+
 git add .
+
 
 git commit -m "Build"
 
