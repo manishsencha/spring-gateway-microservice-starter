@@ -25,5 +25,8 @@ for dir in $list_of_dir ; do
     else
       echo "Build Failed : --> $dir"
     fi
-
 done
+
+echo "Listing all builds : -->"
+
+ls "$cwd/builds"
