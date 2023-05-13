@@ -39,7 +39,7 @@ echo "Cloning repo : -->"
 git clone "https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_REPOSITORY" "$cwd/dest-repo"
 
 echo "Copying required files : -->"
-cp "$cwd/builds/*.jar" "$cwd/dest-repo/"
+cp "$cwd"/builds/* "$cwd/dest-repo/"
 
 echo "Changing Directory : -->"
 cd "$cwd/dest-repo"
