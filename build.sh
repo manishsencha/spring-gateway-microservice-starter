@@ -18,7 +18,7 @@ for dir in $list_of_dir ; do
     mvn clean install
     if [ $? -eq 0 ]; then
       echo "Build Success : --> $dir"
-      mv target/*.jar ../builds/*.jar
+      mv "$cwd/$dir/target/*.jar"  "$cwd/builds/*.jar"
       echo "Moving Build : --> $dir"
     else
       echo "Build Failed : --> $dir"
