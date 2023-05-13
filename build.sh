@@ -35,15 +35,20 @@ GITHUB_USER=manishsencha
 GITHUB_TOKEN=$API_TOKEN_GITHUB
 GITHUB_REPOSITORY=spring-gateway-microservice-starter-builds
 
-echo $GITHUB_TOKEN
-
-echo "GITHUB : $github"
-
+echo "Cloning repo : -->"
 git clone "https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_REPOSITORY" "$cwd/dest-repo"
 
-cp "$cwd"/builds/* "$cwd/dest-repo"
+echo "Copying required files : -->"
+cp "$cwd/builds/*" "$cwd/dest-repo"
 
+echo "Changing Directory : -->"
 cd "$cwd/dest-repo"
+
+echo "Performing Git Actions : -->"
 git add .
+
+git commit -m "Build"
+
+git push
 
 
