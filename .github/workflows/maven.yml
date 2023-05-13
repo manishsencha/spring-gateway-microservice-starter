@@ -30,14 +30,13 @@ jobs:
     - name: Build with Maven
       run: bash build.sh
 
-    - name: Pushes build file
-      uses: dmnemec/copy_file_to_another_repo_action@main
+    - name: Push generated webpage to another repository
+      uses: nkoppel/push-files-to-another-repository@1.1.0
       env:
-        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_files: './'
-          destination_repo: 'manishsencha/spring-gateway-microservice-starter-builds'
-          destination_folder: '.'
-          user_email: 'manishsencha2001@gmail.com'
-          user_name: 'manishsencha'
-          commit_message: ${{ github.event.commits[0].message }}
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+          source-files: './*.jar'
+          destination-username: 'manishsencha'
+          destination-repository: 'spring-gateway-microservice-starter-builds'
+          destination-directory: '.'
+          commit-email: 'manishsencha2001@gmail.com'
