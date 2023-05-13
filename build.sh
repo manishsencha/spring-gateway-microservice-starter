@@ -8,7 +8,7 @@ echo  "List of Directories : --> $list_of_dir"
 
 echo "Creating build directory : --> "
 
-mkdir builds
+mkdir "$cwd/builds"
 
 for dir in $list_of_dir ; do
     echo "Changing directory : --> $dir"
