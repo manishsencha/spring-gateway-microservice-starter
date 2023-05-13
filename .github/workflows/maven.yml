@@ -37,5 +37,6 @@ jobs:
         source_folder: 'builds'
         destination_repo: 'manishsencha/spring-gateway-microservice-starter-builds'
         destination_folder: '.'
+        destination_branch : 'main'
         user_email: 'manishsencha2001@gmail.com'
         user_name: 'manishsencha'
