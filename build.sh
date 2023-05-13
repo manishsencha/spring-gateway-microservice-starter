@@ -37,11 +37,13 @@ GITHUB_REPOSITORY=spring-gateway-microservice-starter-builds
 
 echo $GITHUB_TOKEN
 
-git clone https://${GITHUB_USER}:${GITHUB_TOKEN}@github.com/${GITHUB_USER}/${GITHUB_REPOSITORY}
+echo "GITHUB : $github"
 
-cp "$cwd"/builds/* "$cwd"/"$GITHUB_REPOSITORY"
+git clone "https://$GITHUB_USER:$GITHUB_TOKEN@github.com/$GITHUB_USER/$GITHUB_REPOSITORY" "$cwd/dest-repo"
 
-cd "$cwd"/"$GITHUB_REPOSITORY"
+cp "$cwd"/builds/* "$cwd/dest-repo"
+
+cd "$cwd/dest-repo"
 git add .
 
 
