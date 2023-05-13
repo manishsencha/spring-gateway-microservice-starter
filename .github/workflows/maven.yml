@@ -35,7 +35,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: './*.jar'
+          source_files: './*.jar'
           destination_repo: 'manishsencha/spring-gateway-microservice-starter-builds'
           destination_folder: '.'
           user_email: 'manishsencha2001@gmail.com'
